@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>listar</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">insertar</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/listar">listar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container pt-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">user</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">stock inicial</th>
+                    <th scope="col">stock actual</th>
+                    <th scope="col">precio</th>
+                    <th scope="col">estado</th>
+                    <th scope="col">fecha modificacion</th>
+                    <th scope="col">acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in dataset %}
+                <tr>
+                    <td>{{ data.user }}</td>
+                    <td>{{ data.nombreProducto }}</td>
+                    <td>{{ data.stockInicial }}</td>
+                    <td>{{ data.stockActual }}</td>
+                    <td>{{ data.precio }}</td>
+                    <td>{{ data.estado }}</td>
+                    <td>{{ data.updateDate }}</td>
+                    <td>
+                        <a href="/{{ data.id }}" class="btn btn-outline-info">Editar</a>
+                        <a href="/eliminar/{{ data.id }}" class="btn btn-outline-danger">Elimiar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
