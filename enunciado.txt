@@ -1,0 +1,27 @@
+CRUD EN DJANGO.
+
+Usando el CMD ingresar a la carpeta asignada ubicada en el escritorio.
+
+1.	Crear entorno virtual env-django.
+2.	Crear proyecto usando el framework Django con el nombre de crud-django.
+3.	Realizar migración de tablas a la base de datos.
+4.	Crear super usuario username: admin, clave: Optimus123.
+5.	Dentro del proyecto crear app con el nombre modulo_producto
+6.	Crear modelo de producto donde cada usuario pueda ver los productos que ha ingresado.
+Requerido para el modelo producto:
+from django.contrib.auth.models import User
+
+Campos:
+user; llave foránea 
+nombreProducto; tipo string
+stockInicial; tipo int
+stockActual; tipo int
+precio; tipo int
+estado; tipo boolean
+createDate; tipo date
+updateDate; tipo date
+	
+7.	En el archivo views.py crear las vistas requeridas; pueden usar vistas basadas en clases o funciones. Crear la vista para ingresar productos y luego la vista para listar los productos. Usar html básico.; Para validar que el filtro de productos por usuario está funcionando crear un segundo usuario en el Dashboard que trae por defecto Django. 
+8.	Finalizado el punto anterior continuar con las vistas para editar y eliminar (realizar eliminación lógica) ambas con su respectivo html.
+
+CARGAR AVANCES A GITHUB EN EL REPOSITORIO ASIGNADO
